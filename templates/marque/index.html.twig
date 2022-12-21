@@ -1,0 +1,31 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Liste des eleves {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Liste des marques</h1>
+    <a href="{{url('app_marque_add')}}" class="btn btn-success">Ajouter une marque</a>
+    <table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Libelle</th>
+      <th scope="col">actions</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for m in marques %}
+    <tr>
+      
+      <td>{{m.libelle}}</td>
+      <td>
+        <a href="{{url('app_marque_update',{'id': m.id})}}" class="btn btn-warning">modifier</a>
+      </td>
+    </tr>
+   {% endfor %}
+    
+  </tbody>
+</table>
+
+</div>
+{% endblock %}

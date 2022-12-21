@@ -1,3 +1,32 @@
 controllers:
     resource: ../src/Controller/
     type: attribute
+
+# config/routes.yaml
+api_login_check:
+    path: /api/login_check
+     
+        
+
+# config/routes.yaml
+api_refresh_token:
+    path: /api/token/refresh
+# ...
+
+json_login:
+    path: /api/authentication_token
+
+refresh_token:
+    path: /api/authentication_refresh
+
+# config/routes.yaml
+app.swagger_ui:
+    path: /api/doc
+    methods: GET
+    defaults: { _controller: nelmio_api_doc.controller.swagger_ui }
+
+# config/routes.yaml
+app.swagger:
+    path: /api/doc.json
+    methods: GET
+    defaults: { _controller: nelmio_api_doc.controller.swagger }

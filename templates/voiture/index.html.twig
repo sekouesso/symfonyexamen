@@ -1,0 +1,43 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}Liste des voitures {% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Liste des voitures</h1>
+    <a href="{{url('app_voiture_add')}}" class="btn btn-success">Ajouter une voiture</a>
+    <table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th scope="col">Couleur</th>
+      <th scope="col">Numero de Chassi</th>
+      <th scope="col">Nombre de Siege</th>
+      <th scope="col">Annee</th>
+      <th scope="col">Kilometrage</th>
+      <th scope="col">Marque</th>
+      <th scope="col">Propietaire</th>
+      <th scope="col">actions</th>
+    </tr>
+  </thead>
+  <tbody>
+   {% for v in voitures %}
+    <tr>
+      
+      <td>{{v.couleur}}</td>
+      <td>{{v.numeroChassi}}</td>
+      <td>{{v.nombreSiege}}</td>
+      <td>{{v.annee}}</td>
+      <td>{{v.kilometrage}}</td>
+      <td>{{v.marque.libelle}}</td>
+      <td>{{v.user.email}}</td>
+      <td>
+        <a href="{{url('app_voiture_update',{'id': v.id})}}" class="btn btn-warning">modifier</a>
+      </td>
+    </tr>
+   {% endfor %}
+    
+  </tbody>
+</table>
+
+</div>
+{% endblock %}

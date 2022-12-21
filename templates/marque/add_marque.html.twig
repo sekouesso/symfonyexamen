@@ -1,0 +1,25 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}
+  Ajout d'une Marque
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  {{ form_start(marqueForm) }}
+  {{ form_widget(marqueForm) }}
+  <div>
+    <button type="submit" class="btn btn-{% if editMode %}warning{% else %}success{% endif %}" >
+          {% if editMode %}
+             Modifier
+          {% else %}
+             Ajouter
+          {% endif %}
+    </button>
+  </div>
+  {{ form_end(marqueForm) }}
+</div>
+
+  
+{% endblock %}

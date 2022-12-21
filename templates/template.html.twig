@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+<div class="sb-nav-fixed">
+{% include "partials/nav_haut.html.twig" %}
+    <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                {% include "partials/side_nav.html.twig" %}
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        {% block content %}
+                            <div class="mt-4 p-5 bg-primary text-white rounded">
+                                <h1>Bienvenue sur notre site de Parcking de voiture</h1>
+                            </div>
+                        {% endblock %}
+                    </div>
+                </main>
+                {% include "partials/footer.html.twig" %}
+            </div>
+    </div>
+
+
+</div>
+
+{% endblock %}

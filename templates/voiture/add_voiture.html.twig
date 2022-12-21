@@ -1,0 +1,25 @@
+{% extends 'template.html.twig' %}
+
+{% block title %}
+  Ajout d'une voiture 
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  {{ form_start(voitureForm) }}
+  {{ form_widget(voitureForm) }}
+  <div>
+    <button type="submit" class="btn btn-{% if editMode %}warning{% else %}success{% endif %}" >
+          {% if editMode %}
+             Modifier
+          {% else %}
+             Ajouter
+          {% endif %}
+    </button>
+  </div>
+  {{ form_end(voitureForm) }}
+</div>
+
+  
+{% endblock %}

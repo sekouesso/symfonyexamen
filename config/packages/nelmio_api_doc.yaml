@@ -1,0 +1,36 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: Gestion d'un parcking de voitures
+            description: Cette application permet de garer les voitures
+            version: 1.0.0
+        security:
+             - Bearer: []
+        components:
+            securitySchemes:
+                Bearer:
+                    type: http
+                    scheme: bearer
+                    bearerFormat: JWT
+    areas: # to filter documented areas
+        path_patterns:
+            - ^/api(?!/doc$) # Accepts routes under /api except /api/doc
+# nelmio_api_doc:
+#     documentation:
+#         servers:
+#           - url: http://api.example.com/unsafe
+#             description: API over HTTP
+#           - url: https://api.example.com/secured
+#             description: API over HTTPS
+#         info:
+#             title: My App
+#             description: This is an awesome app!
+#             version: 1.0.0
+        # components:
+        #     securitySchemes:
+        #         Bearer:
+        #             type: http
+        #             scheme: bearer
+        #             bearerFormat: JWT
+#         security:
+#             - Bearer: []
